@@ -1,0 +1,166 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8f4f8;
+    color: #2c3e50;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 90vh;
+}
+
+h1, h2 {
+    color: #34495e;
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.container {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+/* Estilos del formulario */
+#uploadForm {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#deleteForm {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    max-width: 400px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#uploadForm input[type="text"],
+#uploadForm input[type="file"],
+#deleteForm input[type="text"] {
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#uploadForm input[type="text"]:focus,
+#uploadForm input[type="file"]:focus,
+#deleteForm input[type="text"]:focus {
+    border-color: #3498db;
+}
+
+#uploadForm button,
+#deleteForm button {
+    padding: 12px;
+    background-color: #51883d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#deleteForm button {
+    background-color: #c24242;
+}
+
+#uploadForm button:hover {
+    background-color: #9f4343;
+}
+
+#deleteForm button:hover {
+    background-color: #5f2222;
+}
+
+/* Estilos de la galería */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+#gallery img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    #uploadForm {
+        padding: 20px;
+    }
+
+    #gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #uploadForm {
+        padding: 15px;
+    }
+
+    #gallery {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}

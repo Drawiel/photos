@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  backend:
+    build: 
+      context: ./photo-social-backend
+    container_name: photo_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./photo-social-backend:/app
+    working_dir: /app/src
+    command: node server.js
+
+  frontend:
+    build: 
+      context: ./photo-social-frontend
+    container_name: photo_frontend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./photo-social-frontend:/app
+    working_dir: /app/front
+    command: node app.js
+    depends_on:
+      - backend
